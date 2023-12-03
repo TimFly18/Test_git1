@@ -8,20 +8,26 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:steam.properties"/>
 
-    <bean id="bean1"
+  <!--  <bean id="bean1"
           class="FirstProject.fun.Bean1">
         <constructor-arg value="Timi"/>
     </bean>
     <bean id="gamebean"
-          class="FirstProject.fun.Jrpg">
+          class="FirstProject.fun.Rpg"
+          init-method="doWorkInit"
+          destroy-method="doStopWorkInit"
+    factory-method="getRPG"
+    scope="prototype">
 
     </bean>
     <bean id="gamebean2"
           class="FirstProject.fun.Steam"
-    scope="prototype">
+          scope="prototype">
         <property name="game" ref="gamebean"/>
 
         <property name="name" value="${steam.name}"/>
         <property name="age" value="${steam.age}"/>
-    </bean>
+    </bean>-->
+
+    <context:component-scan base-package="FirstProject"/>
 </beans>
