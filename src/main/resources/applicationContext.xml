@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:steam.properties"/>
+
+    <bean id="bean1"
+          class="FirstProject.fun.Bean1">
+        <constructor-arg value="Timi"/>
+    </bean>
+    <bean id="gamebean"
+          class="FirstProject.fun.Jrpg">
+
+    </bean>
+    <bean id="gamebean2"
+          class="FirstProject.fun.Steam"
+    scope="prototype">
+        <property name="game" ref="gamebean"/>
+
+        <property name="name" value="${steam.name}"/>
+        <property name="age" value="${steam.age}"/>
+    </bean>
+</beans>
