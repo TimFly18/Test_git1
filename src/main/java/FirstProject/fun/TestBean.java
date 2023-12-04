@@ -23,9 +23,15 @@ public class TestBean {
         Steam steam3 = context.getBean("gamebean2", Steam.class);
         steam3.playSteam();
         context.close();*/
-        Game game = context.getBean("rpg", Rpg.class);
+       /* Game game = context.getBean("rpg", Rpg.class);
         Steam steam = new Steam(game);
         steam.playSteam();
+        context.close();*/
+       /* Steam steam = context.getBean("steam", Steam.class);
+        steam.playSteam();*/
+
+        Xbox xbox = context.getBean("xbox", Xbox.class);
+        System.out.println(xbox);
         context.close();
 
     }

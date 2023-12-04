@@ -1,33 +1,34 @@
 package FirstProject.fun;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Steam {
-    public void setGame(Game game) {this.game = game;}
-
-    private Game game;
-
-
-    public String getName() {
-        return name;
+/*   *//* @Autowired
+    public void setGame(Game game) {
+        this.game = game;
     }
 
-    public void setName(String name) {
-        this.name = name;
+
+    private G*//*ame game;*/
+
+/*    public Steam(Game game) {
+        this.game =game ;
+    }*/
+
+private Rpg rpg;
+private Jrpg jrpg;
+
+@Autowired
+    public Steam(Rpg rpg, Jrpg jrpg) {
+        this.rpg = rpg;
+        this.jrpg = jrpg;
     }
 
-    public int getAge() {
-        return age;
-    }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+    public String playSteam() {
+      return   "play song -> " + rpg.getSong();
 
-    private String name;
-    private int age;
-
-    public Steam(Game game) {this.game = game;}
-    public Steam() {}
-    public void playSteam(){
-        System.out.println("play song -> " + game.getSong());
     }
 }
